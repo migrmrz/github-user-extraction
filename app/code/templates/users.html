@@ -1,0 +1,48 @@
+<html>
+    <header>
+        <title>GitHub Users</title>
+    </header>
+    <body>
+        <h1 align="center">Github Users</h1>
+        {% if users %}
+        <table align="center" border="1">
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Account Type</th>
+                <th>Image</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td align="center" width="100">{{ user[1] }}</td>
+                <td align="center"><a href="{{ user[4] }}" target="blank">{{ user[0] }}</a></td>
+                <td align="center" width="100">{{ user[3] }}</td>
+                <td><img src="{{ user[2] }}" alt="{{ user[0] }}" width="100" height="100"></td>
+            </tr>
+            {% endfor %}
+        </table><br>
+        
+        {% if page == 1 %}
+        <table align="center" border="1">
+            <tr>
+                <td align="center" width="100"><a href="/page/{{ page + 1 }}"> Next >> </a></td>
+            </tr>
+        </table>
+        {% else %}
+        <table align="center" border="1">
+            <tr>
+                <td align="center" width="100"><a href="/page/{{ page - 1 }}"> << Previous </a></td>
+                <td align="center" width="100"><a href="/page/{{ page + 1 }}"> Next >> </a></td>
+            </tr>
+        </table>
+        {% endif %}
+        {% else %}
+        <p align="center">You have reached the end of the records. There are no more users to display.</p>
+        <table align="center" border="1">
+            <tr>
+                <td align="center" width="100"><a href="/page/{{ page - 1 }}"> << Previous </a></td>
+            </tr>
+        </table>
+        {% endif %}
+    </body>
+</html>
