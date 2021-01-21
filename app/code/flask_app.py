@@ -23,7 +23,6 @@ def home(page):
 
 
 @app.route('/api/profiles')
-@cache.cached(timeout=86400)
 def get_data():
     gdb = GithubDatabase()
     params = request.args.to_dict()
