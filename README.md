@@ -71,7 +71,7 @@ The API has defined the following endpoints:
 
 ## Caching
 
-Both, the web app and the API have cache implementation through Flask-Caching with a caching timeout of 24 hours, as data is not considered to change frecuently.
+The web app and has cache implementation through Flask-Caching with a caching timeout of 24 hours, as data is not considered to change frecuently.
 
 
 
